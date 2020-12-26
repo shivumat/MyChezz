@@ -1,0 +1,39 @@
+.userNameAndLocation {
+  height: 100%;
+  padding-top: 5%;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+}
+.playerCountry {
+  display: inline-flex;
+}
+.PlayerInfo {
+  display: inline-flex;
+}
+.userName {
+  display: inline-flex;
+  font-size: 1.25vw;
+}
+.playerName {
+  font-size: 2.5vw;
+}
+.countryFlag {
+  height: 15px;
+  padding-top: 5px;
+  padding-right: 5px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+@media screen and (max-width: 800px) {
+  .userName {
+    display: inline-flex;
+    font-size: 2.5vw;
+  }
+  .playerName {
+    font-size: 5vw;
+  }
+  .countryFlag {
+    height: 3vw;
+  }
+}
