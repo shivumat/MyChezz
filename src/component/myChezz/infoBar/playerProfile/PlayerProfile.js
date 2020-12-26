@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Banner from "react-js-banner";
 import { getPlayerProfile } from "../../../../service/chessDotComAPI";
 import { MY_USER_NAME } from "../../../../static/constants/chessDotComConstants";
 import defaultLogo from "../../../../static/images/avatar.png";
@@ -9,18 +10,32 @@ import UserNameDropDown from "./userNameDropDown/UserNameDropDown";
 
 function PlayerProfile(props) {
   const [playerInfo, setPlayerInfo] = useState({});
+  const [isBannerVisible, setIsBannerVisible] = useState(false);
+  const { userName } = props;
+  const BANNER_TIME = 3000;
 
   useEffect(() => {
     getPayerInfo();
   }, []);
 
+  useEffect(() => {
+    getPayerInfo();
+  }, [userName]);
+
   const getPayerInfo = async () => {
     let playerInfo = await getPlayerProfile(props.userName);
     if (playerInfo === undefined) {
+      setIsBannerVisible(true);
+      setTimeout(disableBanner, BANNER_TIME);
       playerInfo = await getPlayerProfile(MY_USER_NAME);
+    } else {
+      setIsBannerVisible(false);
     }
-    console.log(playerInfo);
     setPlayerInfo(playerInfo);
+  };
+
+  const disableBanner = () => {
+    setIsBannerVisible(false);
   };
 
   return (
@@ -32,7 +47,17 @@ function PlayerProfile(props) {
         title={playerInfo.name === undefined ? "" : playerInfo.name}
       />
       <PlayerInfo playerInfo={playerInfo} />
-      <UserNameDropDown />
+      <UserNameDropDown {...props} />
+      {isBannerVisible ? (
+        <Banner
+          showBanner={true}
+          title="No User Found. You are stuck with me :/"
+          css={{ color: "#FFF", backgroundColor: "orange", fontSize: 15 }}
+          visibleTime={BANNER_TIME}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 }

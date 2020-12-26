@@ -6,9 +6,13 @@ import "./MyChezz.css";
 function MyChezz() {
   const [userName, setUserName] = useState(MY_USER_NAME);
 
+  const updateUserName = (newUserName) => {
+    setUserName(newUserName);
+  };
+
   return (
     <div className="MyChezz">
-      <InfoBar userName={userName} />
+      <InfoBar userName={userName} updateUserName={updateUserName} />
     </div>
   );
 }
