@@ -5,6 +5,7 @@ import defaultLogo from "../../../../static/images/avatar.png";
 import PlayerAvatar from "./playerAvatar/PlayerAvatar";
 import PlayerInfo from "./playerInfo/PlayerInfo";
 import "./PlayerProfile.css";
+import UserNameDropDown from "./userNameDropDown/UserNameDropDown";
 
 function PlayerProfile(props) {
   const [playerInfo, setPlayerInfo] = useState({});
@@ -31,6 +32,7 @@ function PlayerProfile(props) {
         title={playerInfo.name === undefined ? "" : playerInfo.name}
       />
       <PlayerInfo playerInfo={playerInfo} />
+      <UserNameDropDown />
     </div>
   );
 }

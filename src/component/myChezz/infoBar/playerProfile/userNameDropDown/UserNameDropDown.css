@@ -1,0 +1,49 @@
+.searchUser {
+  float: right;
+  height: 100%;
+}
+.userNameInput {
+  height: 33%;
+  width: 10vw;
+  text-align: center;
+  padding-bottom: 2px;
+}
+.chessDotComLogo {
+  height: 95%;
+  width: 75%;
+}
+.userTextInput {
+  height: 60%;
+  width: 95%;
+}
+.searchButton {
+  height: 90%;
+  width: 30%;
+}
+.searchIcon {
+  display: block;
+  width: 70%;
+}
+.userNameSubmit {
+  display: none;
+}
+@media screen and (max-width: 550px) {
+  .userNameInput {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .searchButton {
+    height: 90%;
+    width: 95%;
+  }
+  .searchIcon {
+    display: none;
+    width: 75%;
+  }
+  .userNameSubmit {
+    display: block;
+    height: 70%;
+  }
+}
