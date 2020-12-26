@@ -5,35 +5,20 @@
   padding-bottom: 5px;
   padding-left: 8px;
 }
-.playerCountry {
-  display: inline-flex;
-}
 .PlayerInfo {
-  display: inline-flex;
+  float: left;
 }
 .userName {
   display: inline-flex;
-  font-size: 1.25vw;
+  font-size: 2vh;
 }
 .playerName {
-  font-size: 2.5vw;
+  font-size: 4vh;
 }
 .countryFlag {
-  height: 15px;
+  height: 1.5vh;
   padding-top: 5px;
   padding-right: 5px;
   padding-bottom: 0px;
   padding-left: 0px;
-}
-@media screen and (max-width: 800px) {
-  .userName {
-    display: inline-flex;
-    font-size: 2.5vw;
-  }
-  .playerName {
-    font-size: 5vw;
-  }
-  .countryFlag {
-    height: 3vw;
-  }
 }
