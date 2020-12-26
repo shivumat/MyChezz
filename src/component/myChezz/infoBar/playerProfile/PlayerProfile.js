@@ -28,6 +28,7 @@ function PlayerProfile(props) {
         avatar={
           playerInfo.avatar === undefined ? defaultLogo : playerInfo.avatar
         }
+        title={playerInfo.name === undefined ? "" : playerInfo.name}
       />
       <PlayerInfo playerInfo={playerInfo} />
     </div>
