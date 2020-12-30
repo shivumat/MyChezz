@@ -1,0 +1,35 @@
+.PlayTabs {
+  float: right;
+  background-color: #bbc5c5;
+  width: 25%;
+  height: 100%;
+  text-align: center;
+}
+
+/* Style the buttons inside the tab */
+.PlayTabs button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 100%;
+}
+
+/* Change background color of buttons on hover */
+.PlayTabs button:hover {
+  background-color: #aab7b7;
+}
+
+/* Create an active/current tablink class */
+.PlayTabs button.active {
+  background-color: #95a5a5;
+}
+
+@media screen and (max-width: 800px) {
+  .PlayTabs {
+    display: none;
+  }
+}

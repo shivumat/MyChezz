@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MY_USER_NAME } from "../../static/constants/chessDotComConstants";
+import ChezzArea from "./chezzArea/ChezzArea";
 import InfoBar from "./infoBar/InfoBar";
 import "./MyChezz.css";
 
@@ -13,6 +14,7 @@ function MyChezz() {
   return (
     <div className="MyChezz">
       <InfoBar userName={userName} updateUserName={updateUserName} />
+      <ChezzArea />
     </div>
   );
 }

@@ -6,7 +6,6 @@
   height: 33%;
   width: 10vw;
   text-align: center;
-  padding-bottom: 2px;
 }
 .chessDotComLogo {
   height: 95%;
@@ -14,7 +13,7 @@
 }
 .userTextInput {
   height: 60%;
-  width: 95%;
+  width: 85%;
 }
 .searchButton {
   height: 90%;
