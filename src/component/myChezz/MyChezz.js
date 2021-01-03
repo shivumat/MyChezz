@@ -14,7 +14,7 @@ function MyChezz() {
   return (
     <div className="MyChezz">
       <InfoBar userName={userName} updateUserName={updateUserName} />
-      <ChezzArea />
+      <ChezzArea userName={userName} />
     </div>
   );
 }

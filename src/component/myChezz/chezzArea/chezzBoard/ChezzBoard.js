@@ -5,10 +5,10 @@ import "./ChezzBoard.css";
 function ChezzBoard(props) {
   const calculateBoardWidth = (param) => {
     let { screenWidth, screenHeight } = param;
-    if (screenWidth > screenHeight) {
+    if (screenWidth > screenHeight * 0.85) {
       return screenHeight * 0.85;
     } else {
-      return screenWidth * 0.85;
+      return screenWidth;
     }
   };
   return (

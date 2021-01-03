@@ -1,4 +1,21 @@
-import { GET_PLAYER_INFO_API } from "../static/constants/chessDotComConstants";
+import {
+  GET_PLAYER_INFO_API,
+  GET_PLAYER_ARCHIVE_API,
+} from "../static/constants/chessDotComConstants";
+
+export const getPlayerArchive = async (userName, year, month) => {
+  return await fetch(GET_PLAYER_ARCHIVE_API(userName, year, month))
+    .then((result) => {
+      if (result.status !== 200) {
+        return undefined;
+      }
+      return result.json();
+    })
+    .then(
+      (jsonResult) => jsonResult,
+      (error) => undefined
+    );
+};
 
 export const getPlayerProfile = async (username) => {
   return await fetch(GET_PLAYER_INFO_API(username))
