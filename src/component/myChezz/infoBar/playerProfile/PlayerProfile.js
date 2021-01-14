@@ -25,6 +25,7 @@ function PlayerProfile(props) {
   const getPayerInfo = async () => {
     let playerInfo = await getPlayerProfile(props.userName);
     if (playerInfo === undefined) {
+      props.updateUserName(MY_USER_NAME);
       setIsBannerVisible(true);
       setTimeout(disableBanner, BANNER_TIME);
       playerInfo = await getPlayerProfile(MY_USER_NAME);
@@ -40,12 +41,7 @@ function PlayerProfile(props) {
 
   return (
     <div className={"PlayerProfile"}>
-      <PlayerAvatar
-        avatar={
-          playerInfo.avatar === undefined ? defaultLogo : playerInfo.avatar
-        }
-        title={playerInfo.name === undefined ? "" : playerInfo.name}
-      />
+      <PlayerAvatar avatar={playerInfo.avatar} title={userName} />
       <PlayerInfo playerInfo={playerInfo} />
       <UserNameDropDown {...props} />
       {isBannerVisible ? (

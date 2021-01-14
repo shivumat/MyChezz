@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getPlayerArchive } from "../../../../service/chessDotComAPI";
 import "./PlayerArchive.css";
+import PlayerGame from "./playerGame/PlayerGame";
 
 function PlayerArchive(props) {
   const getMonthInMM = (month) =>
@@ -18,7 +19,7 @@ function PlayerArchive(props) {
 
   useEffect(() => {
     getPayerGames();
-  }, [userName]);
+  }, [userName, archiveMonth, archiveYear]);
 
   const getPayerGames = async () => {
     let playerArchive = await getPlayerArchive(
@@ -26,8 +27,19 @@ function PlayerArchive(props) {
       archiveYear,
       archiveMonth
     );
+    if (playerArchive !== undefined) {
+      setPlayerGames(playerArchive.games);
+    } else {
+      setPlayerGames([]);
+    }
   };
-  return <div className="PlayerArchive"></div>;
+  return (
+    <div className="PlayerArchive">
+      {playerGames.map((game, i) => (
+        <PlayerGame key={"playerGame" + i} game={game} />
+      ))}
+    </div>
+  );
 }
 
 export default PlayerArchive;

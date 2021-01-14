@@ -3,8 +3,10 @@ import {
   GET_PLAYER_ARCHIVE_API,
 } from "../static/constants/chessDotComConstants";
 
+const proxyurl = "https://cors-anywhere.herokuapp.com/";
+
 export const getPlayerArchive = async (userName, year, month) => {
-  return await fetch(GET_PLAYER_ARCHIVE_API(userName, year, month))
+  return await fetch(proxyurl + GET_PLAYER_ARCHIVE_API(userName, year, month))
     .then((result) => {
       if (result.status !== 200) {
         return undefined;
@@ -18,7 +20,7 @@ export const getPlayerArchive = async (userName, year, month) => {
 };
 
 export const getPlayerProfile = async (username) => {
-  return await fetch(GET_PLAYER_INFO_API(username))
+  return await fetch(proxyurl + GET_PLAYER_INFO_API(username))
     .then((result) => {
       if (result.status !== 200) {
         return undefined;
@@ -35,7 +37,7 @@ const getPlayerInfoWithCountry = async (jsonResult) => {
   if (jsonResult === undefined || jsonResult.country === undefined) {
     return jsonResult;
   } else {
-    return await fetch(jsonResult.country)
+    return await fetch(proxyurl + jsonResult.country)
       .then((countryResult) => {
         return countryResult.json();
       })

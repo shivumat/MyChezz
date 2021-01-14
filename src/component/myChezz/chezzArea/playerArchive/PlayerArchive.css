@@ -4,4 +4,18 @@
   width: 25%;
   height: 100%;
   text-align: center;
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  opacity: 0.3;
+}
+
+::-webkit-scrollbar-track {
+  background: #bbc5c5;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7a8e8e;
 }
